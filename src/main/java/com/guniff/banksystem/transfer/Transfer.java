@@ -14,11 +14,12 @@ public class Transfer {
 
     @ManyToOne
     @JoinColumn(name = "sender_account_number")
-    private Account fromAccountNumber;
+    private Account senderAccountNumber;
 
-    @ManyToOne
-    @JoinColumn(name = "receiver_account_number")
-    private Account toAccountNumber;
+    @Column(nullable = false)
+    private String receiverAccountNumber;
+
+    private Bank receiverBank;
 
     @Column(nullable = false)
     private Long amount;
